@@ -8,6 +8,9 @@ function getDataAndCreateUser (){
       var groupResultsToPrint = "NADA";
       var emailGroupResultsToPrint= [];
 
+      // Damos 6 segundo para que se complete el Google Sheets
+      Utilities.sleep(6 * 1000)
+      
       var todaInfo = ssTest.getRange("A4:BB").getValues(); // Captura todo
       var infoPorProcesar = todaInfo.filter(function (r) {return r [0] !== "" && r [10] !== "" && r [14] !== "" && r [12] == ""}); // Filtra solo lo que quiero
       console.log("Toda la infor sin resultados", infoPorProcesar);
